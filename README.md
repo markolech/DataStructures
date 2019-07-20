@@ -8,3 +8,5 @@ push()
 pop()
 
 shift()
+
+unshift()
