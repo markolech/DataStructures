@@ -23,13 +23,6 @@ constructor(){
       this.length++
       return this 
   }
-  traverse(){
-    let current = this.head
-    while(current){
-      console.log("current: ",  current.val)
-      current = current.next
-    }
-  }
   pop(){
     if(!this.head) return undefined
     let current = this.head
@@ -53,9 +46,22 @@ constructor(){
     this.head = removedNode.next
     this.length--
     if(this.length === 0) {
-      this.tail = null
-      }
+       this.head = null
+       this.tail = null
+     }
     return removedNode
+  }
+  unshift(val){
+    let newNode = new Node(val) 
+    if(!this.head) {
+      this.head = newNode
+      this.tail = newNode
+    } else {
+      newNode.next = this.head
+      this.head = newNode
+    }
+    this.length++
+    return this
   }
 }
 
