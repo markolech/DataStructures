@@ -47,6 +47,16 @@ constructor(){
       }
       return current
   }
+  shift(){
+    if(!this.head) return undefined
+    let removedNode = this.head
+    this.head = removedNode.next
+    this.length--
+    if(this.length === 0) {
+      this.tail = null
+      }
+    return removedNode
+  }
 }
 
 
