@@ -3,6 +3,8 @@ Code as I write as I practice Data Structures
 
 ### Singly Linked List
 #### Methods Completed
-push
+push()
 
-pop
+pop()
+
+shift()
