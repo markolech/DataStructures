@@ -83,7 +83,7 @@ class SinglyLinkedList {
   }
   //Insert method without temp variable solution
   insert(index, val) {
-    if (index < 0  || index > this.length) {
+    if (index < 0 || index > this.length) {
       return false
     }
     if (index === this.length) {
@@ -95,7 +95,7 @@ class SinglyLinkedList {
       return true
     }
     let newNode = new Node(val)
-    let previousNode = this.get(index-1)
+    let previousNode = this.get(index - 1)
     newNode.next = previousNode.next
     previousNode.next = newNode
     this.length++
@@ -103,7 +103,7 @@ class SinglyLinkedList {
   }
   //Insert method with temp variable solution
   insert2(index, val) {
-    if (index < 0  || index > this.length) return false
+    if (index < 0 || index > this.length) return false
     if (index === this.length) {
       this.push(val)
       return true
@@ -113,15 +113,23 @@ class SinglyLinkedList {
       return true
     }
     let insertNode = new Node(val)
-    let previousNode = this.get(index-1)
+    let previousNode = this.get(index - 1)
     let afterNode = previousNode.next
     previousNode.next = insertNode
     insertNode.next = afterNode
     this.length++
     return true
   }
-}
-
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined
+    if (index === this.length - 1) return this.pop()
+    if (index === 0) return this.shift()
+    let previousNode = this.get(index - 1)
+    let removed = previousNode.next
+    previousNode.next = removed.next
+    this.length--
+    return removed
+  }
 }
 
 let list = new SinglyLinkedList()
