@@ -31,3 +31,5 @@ Removal - O(1) or O(N)
 Searching - O(N)
 
 Access - O(N)
+
+##### Singly Linked List can be a better choice than arrays when insertion and deletion at the beginning are required often but you don't require random access.
