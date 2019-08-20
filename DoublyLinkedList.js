@@ -30,13 +30,13 @@ class DoublyLinkedList {
     let poppedNode = this.tail
     if (this.length === 1) {
       this.head = null
-			this.tail = null
+      this.tail = null
     } else {
       this.tail = this.tail.prev
       this.tail.next = null
-			poppedNode.prev = null
-		}
-		this.length--
-		return poppedNode.val
+      poppedNode.prev = null
+    }
+    this.length--
+    return poppedNode.val
   }
 }
